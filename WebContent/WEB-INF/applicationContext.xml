@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans.xsd">
+     
+     <bean id="userBo" class="com.test.bo.UserBoImpl" />
+     
+     <bean id="userSpringAction" class="com.test.action.UserSpringAction">
+		<property name="userBo" ref="userBo" />	
+	</bean>
+	
+	<bean id="userDAO" class="com.test.dao.UserDAO" />
+	
+	<bean id="user" class="com.test.model.User" />
+	
+	<bean id="loginActionBean" class="com.test.action.LoginAction">
+		<property name="user" ref="user" />
+        <property name="userDAO" ref="userDAO" />
+    </bean> 
+</beans>

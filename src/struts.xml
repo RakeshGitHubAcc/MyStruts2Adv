@@ -20,9 +20,11 @@
 
 	</package>
 	<package name="user" namespace="/" extends="struts-default">
+	
         <action name="update">
             <result>views/update.jsp</result>
         </action>
+        
         <action name="UpdateUser" class="com.test.action.UpdateUserAction">
             <interceptor-ref name="token"></interceptor-ref>
             <!--
@@ -33,5 +35,20 @@
             <result name="input">views/update.jsp</result>
             <result name="invalid.token">views/invalid_token.jsp</result>
         </action>
+        
+        <!-- configuring spring action class -->
+        <action name="userSpringAction" class="userSpringAction" >
+			<result name="success">views/success.jsp</result>
+		</action>
+		
+		<action name="loginForm">
+             <result>views/LoginForm.jsp</result>
+        </action>
+        
+		<action name="login" class="loginActionBean">
+            <result name="success">views/success.jsp</result>
+            <result name="error">views/error.jsp</result>
+        </action>
+        
     </package>
 </struts>
