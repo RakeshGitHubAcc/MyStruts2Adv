@@ -26,6 +26,11 @@
 	    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   	</listener>
   	
+  	 <!-- Hibernate custom listener configuration  -->
+  	<listener>
+    	<listener-class>com.test.listener.HibernateListener</listener-class>
+    </listener>
+  	
    <!-- Setting welcome file  -->	
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>

@@ -27,9 +27,7 @@
         
         <action name="UpdateUser" class="com.test.action.UpdateUserAction">
             <interceptor-ref name="token"></interceptor-ref>
-            <!--
-            OR <interceptor-ref name="tokenSession"></interceptor-ref>
-             -->
+            <!-- OR <interceptor-ref name="tokenSession"></interceptor-ref> -->
             <interceptor-ref name="defaultStack"></interceptor-ref>
             <result name="success">views/update_success.jsp</result>
             <result name="input">views/update.jsp</result>
@@ -51,4 +49,24 @@
         </action>
         
     </package>
+
+	<package name="myhibernate" namespace="/" extends="struts-default">
+	
+		<action name="studentForm">
+			<result>views/student.jsp</result>
+		</action>
+		
+		<action name="addStudent" method="execute"
+			class="com.test.action.AddStudentAction">
+			<result name="success" type="redirect">
+				listStudents
+			</result>
+		</action>
+
+		<action name="listStudents" method="listStudents"
+			class="com.test.action.AddStudentAction">
+			<result name="success">views/student.jsp</result>
+		</action>
+
+	</package>
 </struts>
