@@ -56,15 +56,13 @@
 			<result>views/student.jsp</result>
 		</action>
 		
-		<action name="addStudent" method="execute"
-			class="com.test.action.AddStudentAction">
+		<action name="addStudent" method="execute" class="addStudentActionBean">
 			<result name="success" type="redirect">
 				listStudents
 			</result>
 		</action>
 
-		<action name="listStudents" method="listStudents"
-			class="com.test.action.AddStudentAction">
+		<action name="listStudents" method="listStudents" class="listStudentAction">
 			<result name="success">views/student.jsp</result>
 		</action>
 
